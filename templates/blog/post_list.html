@@ -5,22 +5,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <title>мой блог</title>
 </head>
 <body>
     <div>
         <h1>Блог Ивана</h1>
     </div>
-    <div>
-        <p>published: 21.01.2019, 12:14</p>
-        <h2><a href="">Первый пост</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+        <p>published: {{ post.publish }}/p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text }}</p>
+        </div>
+    {% endfor %}
 
-    <div>
-        <p>published: 21.01.2019, 12:14</p>
-        <h2><a href="">Второй пост</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
 </body>
 </html>
